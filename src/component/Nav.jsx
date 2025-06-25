@@ -21,7 +21,7 @@ const Nav = () => {
 
       const isListItem = target.closest("li");
 
-      if (menuRef.current && !menuRef.current.contains(event.target) || isListItem) {
+      if (menuRef.current || !menuRef.current.contains(event.target) || isListItem) {
         setMenuOpen(false);
       }
     };
