@@ -1,6 +1,10 @@
+import Header from "../layout/Header";
+
 let Home = () => {
     return(
-        <h1>Home page</h1>
+        <div className="home">
+            <Header/>
+        </div>
     );
 }
 

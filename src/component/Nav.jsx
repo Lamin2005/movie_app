@@ -42,7 +42,6 @@ const Nav = () => {
         <FontAwesomeIcon icon={faBars} />
       </div>
 
-      {/* ✅ ref is only here */}
       <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
         <div ref={menuRef} className="navli">
           <li>
@@ -58,7 +57,7 @@ const Nav = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/about" className="nav-link">
+            <NavLink to="/tvseries" className="nav-link">
               <FontAwesomeIcon icon={faTv} className="icon" />
               TV Series
             </NavLink>
