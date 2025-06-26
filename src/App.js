@@ -1,5 +1,4 @@
 import "./App.css";
-import Header from "./layout/Header";
 import { BrowserRouter, Routes, Route } from "react-router";
 import Home from "./pages/Home";
 import Movies from "./pages/Movies";
