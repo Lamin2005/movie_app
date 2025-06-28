@@ -5,21 +5,24 @@ import Movies from "./pages/Movies";
 import TVseries from "./pages/TVseries";
 import Error from "./pages/Error";
 import ShareLayout from "./layout/ShareLayout";
+import { OnlineChecking } from "./context/OnlineChecking";
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="App">
-        <Routes>
-          <Route path="/" element={<ShareLayout />}>
-            <Route index element={<Home />} />
-            <Route path="/movies" element={<Movies />} />
-            <Route path="/tvseries" element={<TVseries />} />
-            <Route path="*" element={<Error />} />
-          </Route>
-        </Routes>
-      </div>
-    </BrowserRouter>
+    <OnlineChecking>
+      <BrowserRouter>
+        <div className="App">
+          <Routes>
+            <Route path="/" element={<ShareLayout />}>
+              <Route index element={<Home />} />
+              <Route path="/movies" element={<Movies />} />
+              <Route path="/tvseries" element={<TVseries />} />
+              <Route path="*" element={<Error />} />
+            </Route>
+          </Routes>
+        </div>
+      </BrowserRouter>
+    </OnlineChecking>
   );
 }
 

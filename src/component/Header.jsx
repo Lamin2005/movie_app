@@ -4,6 +4,7 @@ import "@splidejs/react-splide/css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlayCircle } from "@fortawesome/free-solid-svg-icons";
 import useHook from "../hook/useHook";
+import Loader from "./Loader";
 
 let Header = () => {
   let API_KEY = "2387d20a0668a260eba20fd50fb57bb8";
@@ -20,9 +21,9 @@ let Header = () => {
         }}
       >
         {loading ? (
-          <>
-            <h1>Loading...</h1>
-          </>
+          <div style={{width:"100%",height:"100vh",display:"flex",justifyContent:"center",alignItems:"center"}}>
+            <Loader />
+          </div>
         ) : (
           <>
             {data.map((movie) => {

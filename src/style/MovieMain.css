@@ -1,19 +1,19 @@
 .movie_main {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .popular,
 .trendingmovie,
 .trendingtv {
-    width: 100%;
-    padding: 1rem;
-    text-align: left;
-    margin-top: 1.5rem;
-    color: white;
+  width: 100%;
+  padding: 1rem;
+  text-align: left;
+  margin-top: 1.5rem;
+  color: white;
 }
 
 .movie-row {
@@ -36,7 +36,7 @@
   user-select: none;
   will-change: scroll-position;
   backface-visibility: hidden;
-  transform: translateZ(0); 
+  transform: translateZ(0);
   cursor: grab;
 }
 
@@ -56,6 +56,7 @@
   color: white;
   margin-top: 1.5rem;
   position: relative;
+  user-select: none;
 }
 
 .movie-box img {
@@ -66,28 +67,53 @@
   transition: transform 0.3s;
 }
 
-.play_icon{
-    display: none;
+.play_icon {
+  display: none;
 }
 
-.movie-box:hover .play_icon{
-    display: block;
-    color: crimson;
-    position: absolute;
-    width: 100%;
-    height: 80%;
-    z-index: 1;
-    padding-top:6rem;
-    font-size: 3rem;
-}
-
-.movie-box:hover img,.movie-title {
-  transform: scale(1.05);
+.movie-box:hover .play_icon {
+  display: block;
+  color: crimson;
+  position: absolute;
+  width: 100%;
+  height: 80%;
+  z-index: 1;
+  padding-top: 6rem;
+  font-size: 3rem;
   cursor: pointer;
 }
 
-.movie-box:hover{
-    color: red;
+.movie-box:hover img {
+  transform: scale(1.05);
+  filter: brightness(60%);
+
+}
+
+.ptitle{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ptitle button{
+  padding: 0.5rem 2rem;
+  background-color: transparent;
+  border: 1px solid white;
+  cursor: pointer;
+  border-radius: 20px;
+  color: white;
+  user-select: none;
+}
+
+.ptitle button:hover{
+  background-color: crimson;
+  color: white;
+  border: none;
+}
+
+.movie-box:hover {
+  color: red;
 }
 
 /* ✅ Movie title */
@@ -104,7 +130,8 @@
   gap: 1rem;
   cursor: grab;
   scroll-behavior: smooth;
-  user-select: none; /* prevent text selection */
+  user-select: none;
+  /* prevent text selection */
 }
 
 .movie-container.active {

@@ -1,10 +1,10 @@
-import { useState,useEffect } from "react";
+import { useState,useEffect, useContext } from "react";
+import { OnlineChecking } from "../context/OnlineChecking";
 
 let useHook = (url) => {
   let [data, setData] = useState([]);
   let [loading, setLoading] = useState(true);
   let [error, setError] = useState("");
-  
 
   let getMovies = async () => {
     try {
