@@ -3,32 +3,12 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlayCircle } from "@fortawesome/free-solid-svg-icons";
-import { useEffect, useState } from "react";
+import useHook from "../hook/useHook";
 
 let Header = () => {
-  let [movies, setMovies] = useState([]);
-  let [loading, setLoading] = useState(true);
-
   let API_KEY = "2387d20a0668a260eba20fd50fb57bb8";
-
-  let getMovies = async () => {
-    try {
-      let reponse = await fetch(
-        `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en`
-      );
-      let data = await reponse.json();
-      console.log(data.results);
-      setMovies(data.results);
-      setLoading(false);
-    } catch (error) {
-      setLoading(false);
-      console.log("Error", error);
-    }
-  };
-
-  useEffect(() => {
-    getMovies();
-  }, []);
+  let url = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en`;
+  let { data, loading } = useHook(url);
 
   return (
     <section className="header">
@@ -40,10 +20,12 @@ let Header = () => {
         }}
       >
         {loading ? (
-          <><h1>Loading...</h1></>
+          <>
+            <h1>Loading...</h1>
+          </>
         ) : (
           <>
-            {movies.map((movie) => {
+            {data.map((movie) => {
               return (
                 <SplideSlide key={movie.id}>
                   <div className="header_main">
@@ -55,7 +37,9 @@ let Header = () => {
                     </div>
                     <div className="header-content">
                       <div className="movie_text">
-                        <h2 style={{color:"crimson"}}>Welcome to MovieVerse</h2>
+                        <h2 style={{ color: "crimson" }}>
+                          Welcome to MovieVerse
+                        </h2>
                         <h1>{movie.title}</h1>
                         <p>{movie.overview}</p>
                         <div className="buttons">

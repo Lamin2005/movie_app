@@ -156,3 +156,8 @@
     background-color: transparent;
     border: 1px solid white;
 }
+
+.movielist{
+    width: 100%;
+    height: 100vh;
+}
