@@ -137,3 +137,19 @@
 .movie-container.active {
   cursor: grabbing;
 }
+
+.skeleton {
+  background-color: #333;
+  animation: shimmer 1.5s infinite linear;
+  border-radius: 10px;
+  height: 270px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -500px 0;
+  }
+  100% {
+    background-position: 500px 0;
+  }
+}

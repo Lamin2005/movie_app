@@ -1,5 +1,4 @@
-import { useState,useEffect, useContext } from "react";
-import { OnlineChecking } from "../context/OnlineChecking";
+import { useState,useEffect} from "react";
 
 let useHook = (url) => {
   let [data, setData] = useState([]);
