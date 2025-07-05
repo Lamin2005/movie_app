@@ -73,7 +73,9 @@ function TrendingMovie() {
             <div className=" movie-box" key={movie.id}>
               <div className="img skeleton">
                 <div className="play_icon">
-                  <FontAwesomeIcon icon={faPlayCircle} />
+                 <a href={`/movies/${movie.id}`}>
+                    <FontAwesomeIcon icon={faPlayCircle} />
+                  </a>
                 </div>
                 <img
                   src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
