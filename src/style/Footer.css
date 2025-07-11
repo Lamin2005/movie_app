@@ -1,0 +1,102 @@
+.footer {
+  position: relative;
+  width: 100%;
+  padding: 1rem;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  overflow: hidden;
+  margin-top: 5rem;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.fmain {
+  width: 100%;
+  height: 350px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.fmain .fheader {
+  width: 100%;
+  height: 15%;
+  text-align: center;
+}
+
+.fmain .fheader h1 {
+  font-size: 2rem;
+  color: white;
+}
+
+.fmain .fitems {
+  width: 90%;
+  height: 70%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.fitems .fitem {
+  width: 280px;
+  height: auto;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: lighter;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items:flex-start;
+  padding-left: 1rem;
+  cursor: pointer;
+}
+
+.fitem h3 {
+  margin-bottom: 0.5rem;
+}
+
+.fitem h3:hover {
+  color: crimson;
+  transition: color 0.3s;
+}
+
+@media screen and (max-width: 768px) {
+  .fmain {
+    height: auto;
+    padding: 2rem 1rem;
+  }
+
+  .fmain .fitems {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .fitems .fitem {
+    width: 100%;
+    margin-top: 1rem;
+    align-items:flex-start;
+    padding-left: 0;
+  }
+
+  .fmain .fheader h1 {
+    font-size: 1.8rem;
+  }
+
+  .fitem h3 {
+    font-size: 1.3rem;
+  }
+}

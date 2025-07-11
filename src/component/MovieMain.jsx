@@ -7,11 +7,11 @@ function MovieMain() {
   
 
   return (
-    <div className="movie_main">
+    <section className="movie_main">
       <Popular />
       <TrendingMovie />
       <TrendingTV />
-    </div>
+    </section>
   );
 }
 

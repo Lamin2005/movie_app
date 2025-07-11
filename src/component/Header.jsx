@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlayCircle } from "@fortawesome/free-solid-svg-icons";
 import useHook from "../hook/useHook";
 
-
 let Header = () => {
   let API_KEY = "2387d20a0668a260eba20fd50fb57bb8";
   let url = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en`;
@@ -22,7 +21,7 @@ let Header = () => {
       >
         {data.map((movie) => {
           return (
-            <SplideSlide key={movie.id} >
+            <SplideSlide key={movie.id}>
               <div className="header_main">
                 <div className="b_img">
                   <img
@@ -37,16 +36,20 @@ let Header = () => {
                     <h1>{movie.title}</h1>
                     <p>{movie.overview}</p>
                     <div className="buttons">
-                      <button className="watchnow">
-                        <FontAwesomeIcon icon={faPlayCircle} /> Watch Now
-                      </button>
-                      <button className="watchtrailer">
-                        <FontAwesomeIcon
-                          icon={faPlayCircle}
-                          style={{ marginRight: "4px" }}
-                        />
-                        Watch Trailer
-                      </button>
+                      <a href={`/movies/${movie.id}`} className="watchlink" >
+                        <button className="watchnow">
+                          <FontAwesomeIcon icon={faPlayCircle} /> Watch Now
+                        </button>
+                      </a>
+                      <a href={`/movies/${movie.id}`} className="watchlink">
+                        <button className="watchtrailer">
+                          <FontAwesomeIcon
+                            icon={faPlayCircle}
+                            style={{ marginRight: "4px" }}
+                          />
+                          Watch Trailer
+                        </button>
+                      </a>
                     </div>
                   </div>
                   <div className="movie_img">

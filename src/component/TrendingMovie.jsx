@@ -2,6 +2,7 @@ import useHook from "../hook/useHook";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlayCircle } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 
 function TrendingMovie() {
   let API_KEY = "2387d20a0668a260eba20fd50fb57bb8";
@@ -65,7 +66,9 @@ function TrendingMovie() {
     <div className="trendingmovie">
       <div className="ptitle">
         <h2>Top Related Movie</h2>
-        <button>View More</button>
+        <Link to="/movies">
+          <button>View More</button>
+        </Link>
       </div>
       <div className=" movie-container drag-scroll" ref={scrollRef}>
         {data.map((movie) => {
@@ -73,7 +76,7 @@ function TrendingMovie() {
             <div className=" movie-box" key={movie.id}>
               <div className="img skeleton">
                 <div className="play_icon">
-                 <a href={`/movies/${movie.id}`}>
+                  <a href={`/movies/${movie.id}`}>
                     <FontAwesomeIcon icon={faPlayCircle} />
                   </a>
                 </div>

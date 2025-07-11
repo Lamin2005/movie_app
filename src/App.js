@@ -6,8 +6,9 @@ import TVseries from "./pages/TVseries";
 import Error from "./pages/Error";
 import ShareLayout from "./layout/ShareLayout";
 import { OnlineChecking } from "./context/OnlineChecking";
-import PopularMovieDetail from "./component/PopularMovieDetail";
-import TopMovieDetail from "./component/TopMovieDetail";
+import MovieDetail from "./component/MovieDetail";
+import TvSeriesDetail from "./component/TvSeriesDetail";
+import SearchMovie from "./component/SearchMovie";
 
 function App() {
   return (
@@ -17,10 +18,13 @@ function App() {
           <Routes>
             <Route path="/" element={<ShareLayout />}>
               <Route index element={<Home />} />
-              <Route path="/movies" element={<Movies />} />
-              <Route path="/movies/:movieID" element={<PopularMovieDetail />} />
-               <Route path="/movies/:movieID" element={<TopMovieDetail/>}/>
-              <Route path="/tvseries" element={<TVseries />} />      
+              <Route path="/movies" element={<Movies />}>
+                <Route path="/movies/search/:searchmovie" element={<SearchMovie />} />
+              </Route>
+              <Route path="/movies/:movieID" element={<MovieDetail />} />
+              <Route path="/tvseries/:tvID" element={<TvSeriesDetail />} />
+              <Route path="/tvseries" element={<TVseries />} />
+
               <Route path="*" element={<Error />} />
             </Route>
           </Routes>

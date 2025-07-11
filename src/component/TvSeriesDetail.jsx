@@ -1,17 +1,17 @@
 import { useParams } from "react-router-dom";
 import "../style/Movies.css";
 import { useEffect, useState } from "react";
-import Loader from "../component/Loader";
+import Loader from "./Loader";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlayCircle } from "@fortawesome/free-solid-svg-icons";
 
-function PopularMovieDetail() {
-  let { movieID } = useParams();
+function TvSeriesDetail() {
+  let { tvID } = useParams();
   let [movie, setMovie] = useState([]);
   let [loading, setLoading] = useState(true);
 
   let API_KEY = "2387d20a0668a260eba20fd50fb57bb8";
-  let url = `https://api.themoviedb.org/3/movie/${movieID}?api_key=${API_KEY}&language=en`;
+  let url = `https://api.themoviedb.org/3/movie/${tvID}?api_key=${API_KEY}&language=en`;
 
   useEffect(() => {
     let getMovieData = async () => {
@@ -31,7 +31,7 @@ function PopularMovieDetail() {
       }
     };
     getMovieData();
-  }, [movieID,url]);
+  }, [tvID,url]);
 
   let convertohourandmin = (runtime) => {
     let hour = Math.floor(runtime / 60);
@@ -104,4 +104,4 @@ function PopularMovieDetail() {
   );
 }
 
-export default PopularMovieDetail;
+export default TvSeriesDetail;
