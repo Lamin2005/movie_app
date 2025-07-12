@@ -2,14 +2,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import useHook from "../hook/useHook";
 import { faPlayCircle } from "@fortawesome/free-solid-svg-icons";
 import Loader from "./Loader";
-import "../style/MovieMain.css";
 
 function TvseriesList() {
+  
   let API_KEY = "2387d20a0668a260eba20fd50fb57bb8";
   let url = `https://api.themoviedb.org/3/tv/popular?api_key=${API_KEY}&language=en`;
-  let { data, loading } = useHook(url);
+  let { data, loading,error } = useHook(url);
   console.log(loading);
-  
 
   if (loading)
     return (
@@ -25,13 +24,44 @@ function TvseriesList() {
         <Loader />
       </div>
     );
+  
+    if (error)
+    return (
+      <div
+        style={{
+          width: "100%",
+          height: "50vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Loader />
+      </div>
+    );
+
+
+  if (data === "")
+    return (
+      <div
+        style={{
+          width: "100%",
+          height: "50vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <h1 style={{ textAlign: "center", color: "white" }}>No Result Found</h1>
+      </div>
+    );
 
   return (
     <div className="movielist">
       <div className="mlist">
         {data.map((movie) => {
           return (
-            <div className=" movie-box" key={movie.id}>
+            <div className=" movie-box2" key={movie.id}>
               <div className="img skeleton">
                 <div className="play_icon">
                   <a href={`/tvseries/${movie.id}`}>
@@ -45,7 +75,7 @@ function TvseriesList() {
                 />
               </div>
               <div className="movie-title">
-                <p>{movie.title}</p>
+                <p style={{ color: "white" }}>{movie.title}</p>
               </div>
             </div>
           );

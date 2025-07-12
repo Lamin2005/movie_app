@@ -12,22 +12,35 @@ let Header = () => {
 
   return (
     <section className="header">
-      <Splide
-        options={{
-          type: "loop",
-          autoplay: true,
-          height: "91vh",
-        }}
-      >
-        {data.map((movie) => {
-          return (
+      {data.length > 0 && (
+        <Splide
+          options={{
+            type: "loop",
+            autoplay: true,
+            perpage: 1,
+            pauseOnHover: true,
+            heightRatio: 0.44,
+            breakpoints: {
+              1024: {
+                heightRatio: 0.4,
+              },
+              768: {
+                heightRatio: 0.6,
+              },
+              480: {
+                heightRatio: 0.9,
+              },
+            },
+          }}
+        >
+          {data.map((movie) => (
             <SplideSlide key={movie.id}>
               <div className="header_main">
                 <div className="b_img">
                   <img
                     src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
                     alt={movie.title}
-                    loading="lazy"
+                    loading="eager"
                   />
                 </div>
                 <div className="header-content">
@@ -36,7 +49,7 @@ let Header = () => {
                     <h1>{movie.title}</h1>
                     <p>{movie.overview}</p>
                     <div className="buttons">
-                      <a href={`/movies/${movie.id}`} className="watchlink" >
+                      <a href={`/movies/${movie.id}`} className="watchlink">
                         <button className="watchnow">
                           <FontAwesomeIcon icon={faPlayCircle} /> Watch Now
                         </button>
@@ -62,9 +75,9 @@ let Header = () => {
                 </div>
               </div>
             </SplideSlide>
-          );
-        })}
-      </Splide>
+          ))}
+        </Splide>
+      )}
     </section>
   );
 };

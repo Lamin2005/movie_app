@@ -11,7 +11,8 @@ function TvHero() {
 
   let searchMovie = (e) => {
       e.preventDefault();
-      navigate(`/movies/search/${searchMovies}`);
+      navigate(`/tvseries/search/${searchMovies}`);
+      setSearchMovies('');
   }
 
   return (
@@ -28,7 +29,7 @@ function TvHero() {
       <div className="heromain">
         <h1>TV Series</h1>
         <div className="searchbar">
-          <input type="text" placeholder="Search Movies..." value={searchMovies} onChange={(e)=> setSearchMovies(e.target.value)}/>
+          <input type="text" placeholder="Search TV Series..." value={searchMovies} onChange={(e)=> setSearchMovies(e.target.value)}/>
           <button onClick={searchMovie}>Search</button>
         </div>
       </div>

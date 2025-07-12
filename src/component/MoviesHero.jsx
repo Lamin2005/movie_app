@@ -12,6 +12,7 @@ function MoviesHero() {
   let searchMovie = (e) => {
       e.preventDefault();
       navigate(`/movies/search/${searchMovies}`);
+      setSearchMovies('');
   }
 
   return (

@@ -2,7 +2,6 @@ import { useParams } from "react-router-dom";
 import useHook from "../hook/useHook";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlayCircle } from "@fortawesome/free-solid-svg-icons";
-import "../style/MovieMain.css";
 import Loader from "./Loader";
 
 function SearchMovie() {
@@ -27,14 +26,29 @@ function SearchMovie() {
       </div>
     );
 
+  if (data == "")
+    return (
+      <div
+        style={{
+          width: "100%",
+          height: "50vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <h1 style={{ textAlign: "center", color: "white" }}>No Result Found</h1>
+      </div>
+    );
+
   return (
     <div className="searchmovielist" style={{ color: "white" }}>
       <div className="searchlist">
-        <h1>SearchMovie `${searchmovie}`</h1>
+        <h2>SearchMovie : {searchmovie}</h2>
         <div className="list">
           {data.map((movie) => {
             return (
-              <div className=" movie-box" key={movie.id}>
+              <div className=" movie-box2" key={movie.id}>
                 <div className="img skeleton">
                   <div className="play_icon">
                     <a href={`/movies/${movie.id}`}>
