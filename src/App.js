@@ -9,6 +9,7 @@ import { OnlineChecking } from "./context/OnlineChecking";
 import MovieDetail from "./component/MovieDetail";
 import TvSeriesDetail from "./component/TvSeriesDetail";
 import SearchMovie from "./component/SearchMovie";
+import SearchTVSeries from "./component/SearchTVSeries";
 
 function App() {
   return (
@@ -19,12 +20,12 @@ function App() {
             <Route path="/" element={<ShareLayout />}>
               <Route index element={<Home />} />
               <Route path="/movies" element={<Movies />}>
-                <Route path="/movies/search/:searchmovie" element={<SearchMovie />} />
+                <Route path="search/:searchmovie" element={<SearchMovie />} />
               </Route>
               <Route path="/movies/:movieID" element={<MovieDetail />} />
               <Route path="/tvseries/:tvID" element={<TvSeriesDetail />} />
               <Route path="/tvseries" element={<TVseries />} >
-                 <Route path="/tvseries/search/:searchmovie" element={<SearchMovie />} />
+                 <Route path="search/:searchTvseries" element={<SearchTVSeries/>} />
               </Route>
 
               <Route path="*" element={<Error />} />

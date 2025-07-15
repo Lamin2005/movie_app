@@ -6,13 +6,14 @@ import { useNavigate } from "react-router-dom";
 
 function TvHero() {
 
-  let [searchMovies,setSearchMovies] = useState('');
+  let [searchTvseries,setSearchTvseries] = useState('');
   let navigate = useNavigate();
-
-  let searchMovie = (e) => {
+  console.log(searchTvseries);
+  
+  let searchTvserie = (e) => {
       e.preventDefault();
-      navigate(`/tvseries/search/${searchMovies}`);
-      setSearchMovies('');
+      navigate(`/tvseries/search/${searchTvseries}`);
+      setSearchTvseries('');
   }
 
   return (
@@ -29,8 +30,8 @@ function TvHero() {
       <div className="heromain">
         <h1>TV Series</h1>
         <div className="searchbar">
-          <input type="text" placeholder="Search TV Series..." value={searchMovies} onChange={(e)=> setSearchMovies(e.target.value)}/>
-          <button onClick={searchMovie}>Search</button>
+          <input type="text" placeholder="Search TV Series..." value={searchTvseries} onChange={(e)=> setSearchTvseries(e.target.value)}/>
+          <button onClick={searchTvserie}>Search</button>
         </div>
       </div>
     </section>

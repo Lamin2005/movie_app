@@ -4,13 +4,13 @@ import TvSeriesList from "../component/TVseriesList";
 import Footer from "../component/Footer";
 
 let  TVseries = () => {
-    let {searchmovie} = useParams();
+    let {searchTvseries} = useParams();
 
     return(
         <div className="movies">
             <TvHero/>
             {
-                !searchmovie && (<TvSeriesList/>)
+                !searchTvseries && (<TvSeriesList/>)
             }
             <Outlet/>
             <Footer/>

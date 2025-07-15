@@ -4,10 +4,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlayCircle } from "@fortawesome/free-solid-svg-icons";
 import Loader from "./Loader";
 
-function SearchMovie() {
-  let { searchmovie } = useParams();
+function SearchTVSeries() {
+  let { searchTvseries } = useParams();
+  
   let API_KEY = "2387d20a0668a260eba20fd50fb57bb8";
-  let url = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${searchmovie}`;
+  let url = `https://api.themoviedb.org/3/search/tv?api_key=${API_KEY}&query=${searchTvseries}`;
 
   let { data, loading } = useHook(url);
 
@@ -24,7 +25,7 @@ function SearchMovie() {
       >
         <Loader />
       </div>
-    );
+    );  
 
   if (data.length === 0)
     return (
@@ -44,14 +45,14 @@ function SearchMovie() {
   return (
     <div className="searchmovielist" style={{ color: "white" }}>
       <div className="searchlist">
-        <h2>SearchMovie : {searchmovie}</h2>
+        <h2>SearchTVSeries : {searchTvseries}</h2>
         <div className="list">
           {data.map((movie) => {
             return (
               <div className=" movie-box2" key={movie.id}>
                 <div className="img skeleton">
                   <div className="play_icon">
-                    <a href={`/movies/${movie.id}`}>
+                    <a href={`/tvseries/${movie.id}`}>
                       <FontAwesomeIcon icon={faPlayCircle} />
                     </a>
                   </div>
@@ -73,4 +74,4 @@ function SearchMovie() {
   );
 }
 
-export default SearchMovie;
+export default SearchTVSeries;

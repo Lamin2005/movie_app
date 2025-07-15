@@ -120,7 +120,12 @@
 /* Responsive text for smaller screens */
 @media (max-width: 768px) {
 
-    .header{
+
+    .b_img img {
+        filter: brightness(100%);
+    }
+
+    .header {
         padding: 1rem;
     }
 
