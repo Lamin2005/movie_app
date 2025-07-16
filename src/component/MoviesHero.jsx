@@ -11,6 +11,9 @@ function MoviesHero() {
 
   let searchMovie = (e) => {
       e.preventDefault();
+      if(searchMovies === ""){
+        return alert("Please Enter a Movie Name.");
+      }
       navigate(`/movies/search/${searchMovies}`);
       setSearchMovies('');
   }

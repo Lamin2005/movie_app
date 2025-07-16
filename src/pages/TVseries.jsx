@@ -2,6 +2,7 @@ import { Outlet, useParams } from "react-router-dom";
 import TvHero from "../component/TvHero";
 import TvSeriesList from "../component/TVseriesList";
 import Footer from "../component/Footer";
+import "../style/Movies.css";
 
 let  TVseries = () => {
     let {searchTvseries} = useParams();

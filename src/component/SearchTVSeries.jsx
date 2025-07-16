@@ -63,7 +63,7 @@ function SearchTVSeries() {
                   />
                 </div>
                 <div className="movie-title">
-                  <p>{movie.title}</p>
+                  <p>{movie.original_name}</p>
                 </div>
               </div>
             );

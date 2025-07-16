@@ -12,6 +12,10 @@ function TvHero() {
   
   let searchTvserie = (e) => {
       e.preventDefault();
+      if(searchTvseries === ""){
+        return alert("Please Enter a TvSeries Name.");
+      }
+
       navigate(`/tvseries/search/${searchTvseries}`);
       setSearchTvseries('');
   }
