@@ -407,3 +407,31 @@
     background-position: 500px 0;
   }
 }
+
+.pagination {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.pagination button {
+  background-color:transparent;
+  border:1px solid white;
+  border-radius: 25px;
+  padding: 0.5rem 2rem;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.pagination button:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  font-size: 1rem;
+}
