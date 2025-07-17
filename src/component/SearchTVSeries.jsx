@@ -62,7 +62,7 @@ function SearchTVSeries() {
   return (
     <div className="searchmovielist" style={{ color: "white" }}>
       <div className="searchlist">
-        <h2>SearchTVSeries : {searchTvseries}</h2>
+        <h2>Search TVSeries : {searchTvseries}</h2>
         <div className="list">
           {data.results.map((movie) => {
             return (

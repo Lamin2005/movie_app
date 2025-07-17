@@ -64,7 +64,7 @@ function SearchMovie() {
   return (
     <div className="searchmovielist" style={{ color: "white" }}>
       <div className="searchlist">
-        <h2>Search Result: {searchmovie}</h2>
+        <h2>Search Movies: {searchmovie}</h2>
         <div className="list">
           {data.results.map((movie) => (
             <div className="movie-box2" key={movie.id}>
